@@ -1,7 +1,7 @@
 public final static String e = "2.718281828459045235360287471352662497757247093699959574966967627724076630353547594571382178525166427427466391932003059";  
 int beginIndex = 2;
 int endIndex = 12;
-String digits = e.substring(int beginIndex,int endIndex);
+String digits = e.substring(beginIndex,endIndex);
 double dNum = Double.parseDouble(digits);
 public void setup()  
 {            
@@ -11,15 +11,14 @@ public void setup()
 }  
 public void draw()  
 {   
-	while(!isPrime(dNum))
+	while(isPrime(dNum) == false)
 	{
 		beginIndex++;
 		endIndex++;
-		digits = substring(beginIndex,endIndex);
+		digits = e.substring(beginIndex,endIndex);
         dNum = Double.parseDouble(digits);
-        System.out.println("First prime is found: + " + digits);
-
 	}
+	System.out.println("First prime is found: " + digits);
 }  
 public boolean isPrime(double dNum)  
 {   
@@ -27,7 +26,7 @@ public boolean isPrime(double dNum)
   {
   	return false;
   }
-  if(dNum==1.0)
+  if(dNum==1)
   {
   	return false;
   }
